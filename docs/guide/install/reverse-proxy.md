@@ -60,7 +60,7 @@ proxy_max_temp_file_size 0; # Add this line
 
 ### **Apache**
 Add the anti-generation configuration item ProxyPass under the VirtualHost field, such as:
-```conf
+```xml
 <VirtualHost *:80>
     ServerName myapp.example.com
     ServerAdmin webmaster@example.com
