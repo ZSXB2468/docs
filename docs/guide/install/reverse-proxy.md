@@ -60,14 +60,16 @@ proxy_max_temp_file_size 0; # Add this line
 
 ### **Apache**
 Add the anti-generation configuration item ProxyPass under the VirtualHost field, such as:
-```xml
+```conf
 <VirtualHost *:80>
     ServerName myapp.example.com
     ServerAdmin webmaster@example.com
     DocumentRoot /www/myapp/public
 
     AllowEncodedSlashes NoDecode
+    ProxyPreserveHost On
     ProxyPass "/" "http://127.0.0.1:5244/" nocanon
+    ProxyPassReverse "/" "http://127.0.0.1:5244/" nocanon
 </VirtualHost>
 ```
 
